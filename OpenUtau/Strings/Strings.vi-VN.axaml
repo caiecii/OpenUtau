@@ -67,10 +67,8 @@
 
   <system:String x:Key="errors.caption">Lỗi</system:String>
   <system:String x:Key="errors.details">Chi tiết về lỗi</system:String>
-  <!--<system:String x:Key="errors.diffsinger.downloadvocoder">Error loading vocoder "{0}". Please download vocoder from {1}</system:String>-->
-  <system:String x:Key="errors.diffsinger.downloadvocoder1">Không load được vocoder </system:String>
-  <system:String x:Key="errors.diffsinger.downloadvocoder2">. Vui lòng tải vocoder từ trang </system:String>
-  <!--<system:String x:Key="errors.editing.autopitch.unsupported">The current voicebank doesn't support generating pitch curve. Please use a Diffsinger or Enunu voicebank.</system:String>-->
+  <!---->
+  <!---->
   <system:String x:Key="errors.encryptedarchive">Không hỗ trợ tệp nén đã mã hoá, cần phải tự giải nén trước.</system:String>
   <system:String x:Key="errors.expression.abbrlong">Từ viết tắt chỉ gồm 1 tới 4 kí tự</system:String>
   <system:String x:Key="errors.expression.abbrset">Phải đặt từ viết tắt</system:String>
@@ -183,7 +181,6 @@
   <system:String x:Key="menu.file">Tệp</system:String>
   <system:String x:Key="menu.file.exit">Thoát ra</system:String>
   <system:String x:Key="menu.file.exportaudio">Xuất ra tệp nhạc</system:String>
-  <system:String x:Key="menu.file.exportds">Xuất thành dự án DiffSinger</system:String>
   <system:String x:Key="menu.file.exportmidi">Xuất thành MIDI</system:String>
   <system:String x:Key="menu.file.exportmixdown">Gộp thành một tệp nhạc</system:String>
   <system:String x:Key="menu.file.exportproject">Xuất thành dự án</system:String>
@@ -410,7 +407,7 @@ Lưu ý: tuỳ chọn này cũng sẽ xoá các tổ hợp thiết lập của b
   <system:String x:Key="prefs.appearance.degree.numbered">Đánh số (1 2 3 4 5 6 7)</system:String>
   <system:String x:Key="prefs.appearance.degree.off">Tắt</system:String>
   <system:String x:Key="prefs.appearance.degree.solfege">Xướng âm (do re mi fa sol la si)</system:String>
-  <!--<system:String x:Key="prefs.appearance.diffsingerlangcodehide">Hide language prefix from phoneme editor</system:String>-->
+  <!---->
   <system:String x:Key="prefs.appearance.lang">Ngôn ngữ</system:String>
   <system:String x:Key="prefs.appearance.showghostnotes">Hiện nốt các track khác trong Piano Roll</system:String>
   <system:String x:Key="prefs.appearance.showicon">Hiện icon trong Piano Roll</system:String>
@@ -422,9 +419,8 @@ Lưu ý: tuỳ chọn này cũng sẽ xoá các tổ hợp thiết lập của b
   <system:String x:Key="prefs.appearance.trackcolor">Dùng màu của track trong giao diện</system:String>
   <system:String x:Key="prefs.cache">Bộ nhớ đệm</system:String>
   <system:String x:Key="prefs.cache.clearonquit">Dọn bộ nhớ đệm khi thoát chương trình</system:String>
-  <system:String x:Key="prefs.cache.diffsingertensorcache">Bộ nhớ đệm Tensor của DiffSinger</system:String>
   <system:String x:Key="prefs.caption">Tuỳ chọn</system:String>
-  <!--<system:String x:Key="prefs.diffsinger">DiffSinger</system:String>-->
+  <!---->
   <system:String x:Key="prefs.editing">Chỉnh sửa</system:String>
   <system:String x:Key="prefs.note.restart">Lưu ý: tắt mở lại OpenUTAU sau khi thay đổi thiết lập này.</system:String>
   <system:String x:Key="prefs.off">Tắt</system:String>
@@ -457,10 +453,9 @@ Lưu ý: tuỳ chọn này cũng sẽ xoá các tổ hợp thiết lập của b
   <system:String x:Key="prefs.playback.test">Nghe thử</system:String>
   <system:String x:Key="prefs.rendering">Render</system:String>
   <system:String x:Key="prefs.rendering.defaultrenderer">Trình render mặc định (thư viện UTAU cổ điển)</system:String>
-  <system:String x:Key="prefs.rendering.diffsingerdepth">Chiều sâu render DiffSinger</system:String>
-  <!--<system:String x:Key="prefs.rendering.diffsingersteps">DiffSinger Render Steps for Acoustic</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepspitch">DiffSinger Render Steps for Pitch</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepsvariance">DiffSinger Render Steps for Variance</system:String>-->
+  <!---->
+  <!---->
+  <!---->
   <!--<system:String x:Key="prefs.rendering.onnxgpu">GPU</system:String>-->
   <system:String x:Key="prefs.rendering.onnxrunner">Bộ phận chạy AI</system:String>
   <system:String x:Key="prefs.rendering.phasecomp">Bù pha</system:String>

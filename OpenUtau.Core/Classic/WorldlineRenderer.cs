@@ -18,6 +18,10 @@ using OpenUtau.Core.Ustx;
 namespace OpenUtau.Classic {
     public class WorldlineRenderer : IRenderer {
 
+        sealed class VocoderConfig {
+            public string model = string.Empty;
+        }
+
         readonly int version;
         readonly double frameMs;
         byte[]? vocoderBytes;
@@ -151,7 +155,7 @@ namespace OpenUtau.Classic {
                                 true,
                                     new string[] { vocoderPkg });
                             }
-                            var config = Yaml.DefaultDeserializer.Deserialize<Core.DiffSinger.DsVocoderConfig>(
+                            var config = Yaml.DefaultDeserializer.Deserialize<VocoderConfig>(
                                 File.ReadAllText(configPath, System.Text.Encoding.UTF8));
                             vocoderBytes = File.ReadAllBytes(Path.Combine(vocoderPath, config.model));
                         }

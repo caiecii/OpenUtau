@@ -9,8 +9,6 @@ namespace OpenUtau.Classic {
             switch (v.SingerType) {
                 case USingerType.Enunu:
                     return new Core.Enunu.EnunuSinger(v) as USinger;
-                case USingerType.DiffSinger:
-                    return new Core.DiffSinger.DiffSingerSinger(v) as USinger;
                 case USingerType.Voicevox:
                     return new Core.Voicevox.VoicevoxSinger(v) as USinger;
                 default:

@@ -67,10 +67,6 @@
 
   <system:String x:Key="errors.caption">エラー</system:String>
   <system:String x:Key="errors.details">エラーの詳細</system:String>
-  <system:String x:Key="errors.diffsinger.downloadvocoder">ボコーダー "{0}" のロードに失敗しました。未インストールの場合、以下のURLからダウンロードしてください：{1}</system:String>
-  <system:String x:Key="errors.diffsinger.downloadvocoder1">ボコーダー </system:String>
-  <system:String x:Key="errors.diffsinger.downloadvocoder2">のロードに失敗しました。未インストールの場合、以下のURLからダウンロードしてください: </system:String>
-  <system:String x:Key="errors.editing.autopitch.unsupported">現在のボイスバンクはピッチカーブの生成に対応していません。この機能はDiffSingerやEnunuのシンガーで使用できます。</system:String>
   <system:String x:Key="errors.encryptedarchive">サポートされていない圧縮ファイルです。手動で展開してください。</system:String>
   <system:String x:Key="errors.expression.abbrlong">パラメータの略称は1～4文字で入力してください</system:String>
   <system:String x:Key="errors.expression.abbrset">パラメータの略称を入力してください</system:String>
@@ -185,7 +181,6 @@
   <system:String x:Key="menu.file">ファイル</system:String>
   <system:String x:Key="menu.file.exit">OpenUtauを終了</system:String>
   <system:String x:Key="menu.file.exportaudio">音声をエクスポート</system:String>
-  <system:String x:Key="menu.file.exportds">DiffSinger Scriptsをエクスポート...</system:String>
   <system:String x:Key="menu.file.exportmidi">MIDIをエクスポート</system:String>
   <system:String x:Key="menu.file.exportmixdown">ミックスダウンしたWavファイルを出力</system:String>
   <system:String x:Key="menu.file.exportproject">プロジェクトファイルをエクスポート</system:String>
@@ -337,7 +332,6 @@
   <system:String x:Key="pianoroll.menu.notes.randomizeoffset">音素のタイミングをランダムにする</system:String>
   <system:String x:Key="pianoroll.menu.notes.randomizetiming">ノートのタイミングをランダムにする</system:String>
   <system:String x:Key="pianoroll.menu.notes.randomizetuning">微分音をランダムにする</system:String>
-  <system:String x:Key="pianoroll.menu.notes.refreshrealcurves">表情パネルの実数値表示を更新（DiffSinger）</system:String>
   <system:String x:Key="pianoroll.menu.notes.removetaildash">末尾の"-"を削除</system:String>
   <system:String x:Key="pianoroll.menu.notes.removetailrest">末尾の"R"を削除</system:String>
   <system:String x:Key="pianoroll.menu.notes.reset.aliases">編集したエイリアスをリセット</system:String>
@@ -416,7 +410,6 @@
   <system:String x:Key="prefs.appearance.degree.numbered">番号 (1 2 3 4 5 6 7)</system:String>
   <system:String x:Key="prefs.appearance.degree.off">なし</system:String>
   <system:String x:Key="prefs.appearance.degree.solfege">Solfège (ドレミファソラシ)</system:String>
-  <system:String x:Key="prefs.appearance.diffsingerlangcodehide">音素に併記される言語コードを非表示</system:String>
   <system:String x:Key="prefs.appearance.lang">言語</system:String>
   <system:String x:Key="prefs.appearance.showghostnotes">ピアノロール上に他トラックの音符を表示</system:String>
   <system:String x:Key="prefs.appearance.showicon">ピアノロールウィンドウにアイコンを表示</system:String>
@@ -428,9 +421,8 @@
   <system:String x:Key="prefs.appearance.trackcolor">UIにトラックカラーを使用する</system:String>
   <system:String x:Key="prefs.cache">キャッシュ</system:String>
   <system:String x:Key="prefs.cache.clearonquit">終了時にキャッシュを消去する</system:String>
-  <system:String x:Key="prefs.cache.diffsingertensorcache">DiffSinger Tensor をキャッシュする</system:String>
   <system:String x:Key="prefs.caption">環境設定</system:String>
-  <!--<system:String x:Key="prefs.diffsinger">DiffSinger</system:String>-->
+  <!---->
   <system:String x:Key="prefs.editing">編集</system:String>
   <system:String x:Key="prefs.note.restart">Note: この設定を変更した後は、OpenUtauを再起動してください。</system:String>
   <system:String x:Key="prefs.off">オフ</system:String>
@@ -465,10 +457,7 @@
   <system:String x:Key="prefs.playback.test">再生テスト</system:String>
   <system:String x:Key="prefs.rendering">レンダリング</system:String>
   <system:String x:Key="prefs.rendering.defaultrenderer">Classic UTAU音源のデフォルトレンダラー</system:String>
-  <!--<system:String x:Key="prefs.rendering.diffsingerdepth">DiffSinger Render Depth</system:String>-->
-  <system:String x:Key="prefs.rendering.diffsingersteps">DiffSinger Render Steps：Acoustic</system:String>
-  <system:String x:Key="prefs.rendering.diffsingerstepspitch">DiffSinger Render Steps：ピッチ</system:String>
-  <system:String x:Key="prefs.rendering.diffsingerstepsvariance">DiffSinger Render Steps：Variance</system:String>
+  <!---->
   <!--<system:String x:Key="prefs.rendering.onnxgpu">GPU</system:String>-->
   <system:String x:Key="prefs.rendering.onnxrunner">機械学習の実行</system:String>
   <system:String x:Key="prefs.rendering.phasecomp">位相補正</system:String>

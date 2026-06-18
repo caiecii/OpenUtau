@@ -31,7 +31,8 @@ namespace OpenUtau.Core {
             var stopWatch = Stopwatch.StartNew();
             var singers = ClassicSingerLoader.FindAllSingers()
                 .Concat(Vogen.VogenSingerLoader.FindAllSingers())
-                .Distinct();
+                .Distinct()
+                .ToList();
             Singers = singers
                 .ToLookup(s => s.Id)
                 .ToDictionary(g => g.Key, g => g.First());
@@ -45,10 +46,7 @@ namespace OpenUtau.Core {
         public USinger GetSinger(string name) {
             Log.Information($"Attach singer to track: {name}");
             name = name.Replace("%VOICE%", "");
-            if (Singers.ContainsKey(name)) {
-                return Singers[name];
-            }
-            return null;
+            return Singers.TryGetValue(name, out var singer) ? singer : null;
         }
 
         public void ScheduleReload(USinger singer) {

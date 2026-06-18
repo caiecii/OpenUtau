@@ -51,7 +51,7 @@ namespace OpenUtau.Classic {
         ///<summary>
         ///Compress a voicebank into an optimized zip archive for distribution.
         ///This function only supports voicebanks that follow the classic packaging model,
-        ///including utau, enunu and diffsinger.
+        /// including supported singer formats.
         ///Vogen voicebanks aren't supported.
         ///</summary>
         public void Publish(USinger singer, string outputFile){

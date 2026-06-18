@@ -67,10 +67,8 @@
 
   <system:String x:Key="errors.caption">Erro</system:String>
   <system:String x:Key="errors.details">Detalhes do Erro</system:String>
-  <!--<system:String x:Key="errors.diffsinger.downloadvocoder">Error loading vocoder "{0}". Please download vocoder from {1}</system:String>-->
-  <system:String x:Key="errors.diffsinger.downloadvocoder1">Erro ao carregar vocoder. </system:String>
-  <system:String x:Key="errors.diffsinger.downloadvocoder2">Faça o download do vocoder em </system:String>
-  <!--<system:String x:Key="errors.editing.autopitch.unsupported">The current voicebank doesn't support generating pitch curve. Please use a Diffsinger or Enunu voicebank.</system:String>-->
+  <!---->
+  <!---->
   <system:String x:Key="errors.encryptedarchive">Arquivos criptografados não são suportados. Por favor, extraia o arquivo manualmente.</system:String>
   <system:String x:Key="errors.expression.abbrlong">A abreviação deve ter de 1 a 4 caracteres</system:String>
   <system:String x:Key="errors.expression.abbrset">A abreviação deve ser definida</system:String>
@@ -183,7 +181,6 @@
   <system:String x:Key="menu.file">Arquivo</system:String>
   <system:String x:Key="menu.file.exit">Fechar</system:String>
   <system:String x:Key="menu.file.exportaudio">Exportar Áudio</system:String>
-  <system:String x:Key="menu.file.exportds">Exportar Scripts do DiffSinger Para</system:String>
   <system:String x:Key="menu.file.exportmidi">Exportar Arquivo Midi</system:String>
   <system:String x:Key="menu.file.exportmixdown">Mixdown Para Arquivo Wav</system:String>
   <system:String x:Key="menu.file.exportproject">Exportar Projeto</system:String>
@@ -406,7 +403,7 @@ Segure Ctrl para selecionar</system:String>
   <system:String x:Key="prefs.appearance.degree.numbered">Numerado (1 2 3 4 5 6 7)</system:String>
   <system:String x:Key="prefs.appearance.degree.off">Desligado</system:String>
   <!--<system:String x:Key="prefs.appearance.degree.solfege">Solfège (do re mi fa sol la ti)</system:String>-->
-  <!--<system:String x:Key="prefs.appearance.diffsingerlangcodehide">Hide language prefix from phoneme editor</system:String>-->
+  <!---->
   <system:String x:Key="prefs.appearance.lang">Idioma</system:String>
   <system:String x:Key="prefs.appearance.showghostnotes">Mostrar notas fantasma</system:String>
   <system:String x:Key="prefs.appearance.showicon">Mostrar ícone no piano roll</system:String>
@@ -418,9 +415,8 @@ Segure Ctrl para selecionar</system:String>
   <system:String x:Key="prefs.appearance.trackcolor">Usar cor da track na UI</system:String>
   <!--<system:String x:Key="prefs.cache">Cache</system:String>-->
   <system:String x:Key="prefs.cache.clearonquit">Limpar o cache ao sair</system:String>
-  <system:String x:Key="prefs.cache.diffsingertensorcache">Cache do DiffSinger Tensor</system:String>
   <system:String x:Key="prefs.caption">Preferências</system:String>
-  <!--<system:String x:Key="prefs.diffsinger">DiffSinger</system:String>-->
+  <!---->
   <system:String x:Key="prefs.editing">Edição</system:String>
   <system:String x:Key="prefs.note.restart">Nota: reinicie o OpenUtau após alterar este item.</system:String>
   <system:String x:Key="prefs.off">Desligar</system:String>
@@ -453,10 +449,10 @@ Segure Ctrl para selecionar</system:String>
   <system:String x:Key="prefs.playback.test">Teste</system:String>
   <system:String x:Key="prefs.rendering">Renderização</system:String>
   <system:String x:Key="prefs.rendering.defaultrenderer">Renderizador padrão (para bancos de voz clássicos)</system:String>
-  <!--<system:String x:Key="prefs.rendering.diffsingerdepth">DiffSinger Render Depth</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingersteps">DiffSinger Render Steps for Acoustic</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepspitch">DiffSinger Render Steps for Pitch</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepsvariance">DiffSinger Render Steps for Variance</system:String>-->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
   <!--<system:String x:Key="prefs.rendering.onnxgpu">GPU</system:String>-->
   <!--<system:String x:Key="prefs.rendering.onnxrunner">Machine Learning Runner</system:String>-->
   <system:String x:Key="prefs.rendering.phasecomp">Compensação de Fase</system:String>

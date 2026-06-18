@@ -13,15 +13,14 @@ namespace OpenUtau.Core.Render {
         public const string WORLDLINE_R2 = "WORLDLINE-R2";
         public const string ENUNU = "ENUNU";
         public const string VOGEN = "VOGEN";
-        public const string DIFFSINGER = "DIFFSINGER";
         public const string VOICEVOX = "VOICEVOX";
 
         static readonly string[] classicRenderers = new[] { WORLDLINE_R, CLASSIC };
         static readonly string[] enunuRenderers = new[] { ENUNU };
         static readonly string[] vogenRenderers = new[] { VOGEN };
-        static readonly string[] diffSingerRenderers = new[] { DIFFSINGER };
         static readonly string[] voicevoxRenderers = new[] { VOICEVOX };
-        static readonly string[] noRenderers = new string[0];
+        static readonly string[] noRenderers = Array.Empty<string>();
+        static readonly IReadOnlyList<string> rendererOptions = new[] { WORLDLINE_R, CLASSIC };
 
         public static string[] GetSupportedRenderers(USingerType singerType) {
             switch (singerType) {
@@ -31,8 +30,6 @@ namespace OpenUtau.Core.Render {
                     return enunuRenderers;
                 case USingerType.Vogen:
                     return vogenRenderers;
-                case USingerType.DiffSinger:
-                    return diffSingerRenderers;
                 case USingerType.Voicevox:
                     return voicevoxRenderers;
                 default:
@@ -40,12 +37,7 @@ namespace OpenUtau.Core.Render {
             }
         }
 
-        public static List<string> getRendererOptions() {
-            return new List<string> {
-                "WORLDLINE-R",
-                "Classic"
-            };
-        }
+        public static IReadOnlyList<string> getRendererOptions() => rendererOptions;
 
         public static string GetDefaultRenderer(USingerType singerType) {
             if (Preferences.Default.DefaultRenderer == "Classic" && singerType == USingerType.Classic) {
@@ -66,8 +58,6 @@ namespace OpenUtau.Core.Render {
                 return new Enunu.EnunuRenderer();
             } else if (renderer == VOGEN) {
                 return new Vogen.VogenRenderer();
-            } else if (renderer == DIFFSINGER) {
-                return new DiffSinger.DiffSingerRenderer();
             } else if (renderer == VOICEVOX) {
                 return new Voicevox.VoicevoxRenderer();
             }

@@ -67,10 +67,8 @@
 
   <system:String x:Key="errors.caption">Błąd</system:String>
   <system:String x:Key="errors.details">Szczegóły błędu</system:String>
-  <!--<system:String x:Key="errors.diffsinger.downloadvocoder">Error loading vocoder "{0}". Please download vocoder from {1}</system:String>-->
-  <system:String x:Key="errors.diffsinger.downloadvocoder1">Błąd ładowania wokodera </system:String>
-  <system:String x:Key="errors.diffsinger.downloadvocoder2">. Proszę pobrać wokoder z </system:String>
-  <!--<system:String x:Key="errors.editing.autopitch.unsupported">The current voicebank doesn't support generating pitch curve. Please use a Diffsinger or Enunu voicebank.</system:String>-->
+  <!---->
+  <!---->
   <system:String x:Key="errors.encryptedarchive">Nieobsługiwany typ zaszyfrowanego archiwum. Proszę ręcznie rozpakować archiwum</system:String>
   <system:String x:Key="errors.expression.abbrlong">Skrót powienien zawierać 1 do 4 znaków</system:String>
   <system:String x:Key="errors.expression.abbrset">Proszę ustawić skrót</system:String>
@@ -183,7 +181,6 @@
   <system:String x:Key="menu.file">Plik</system:String>
   <system:String x:Key="menu.file.exit">Zamknij</system:String>
   <system:String x:Key="menu.file.exportaudio">Eksportuj audio</system:String>
-  <system:String x:Key="menu.file.exportds">Eksportuj skrypt DiffSinger do...</system:String>
   <system:String x:Key="menu.file.exportmidi">Eksportuj plik MIDI</system:String>
   <system:String x:Key="menu.file.exportmixdown">Zmiksuj do pliku WAV</system:String>
   <system:String x:Key="menu.file.exportproject">Eksportuj projekt</system:String>
@@ -410,7 +407,7 @@ Uwaga: ta opcja usuwa presety własne.</system:String>
   <system:String x:Key="prefs.appearance.degree.numbered">Numeryczne (1 2 3 4 5 6 7)</system:String>
   <system:String x:Key="prefs.appearance.degree.off">Wyłączone</system:String>
   <system:String x:Key="prefs.appearance.degree.solfege">Solmizacja (do re mi fa sol la ti)</system:String>
-  <!--<system:String x:Key="prefs.appearance.diffsingerlangcodehide">Hide language prefix from phoneme editor</system:String>-->
+  <!---->
   <system:String x:Key="prefs.appearance.lang">Język</system:String>
   <system:String x:Key="prefs.appearance.showghostnotes">Pokaż nuty innych ścieżek na piano roll</system:String>
   <system:String x:Key="prefs.appearance.showicon">Pokaż ikony na piano roll</system:String>
@@ -422,9 +419,8 @@ Uwaga: ta opcja usuwa presety własne.</system:String>
   <system:String x:Key="prefs.appearance.trackcolor">Użyj koloru ścieżki na UI</system:String>
   <system:String x:Key="prefs.cache">Pamięć podręczna</system:String>
   <system:String x:Key="prefs.cache.clearonquit">Wyczyść pamięć podręczną przy zamknięciu</system:String>
-  <system:String x:Key="prefs.cache.diffsingertensorcache">Pamięć podręczna tensora DiffSinger</system:String>
   <system:String x:Key="prefs.caption">Ustawienia</system:String>
-  <!--<system:String x:Key="prefs.diffsinger">DiffSinger</system:String>-->
+  <!---->
   <!--<system:String x:Key="prefs.editing">Editing</system:String>-->
   <system:String x:Key="prefs.note.restart">Uwaga: proszę uruchomić ponownie OpenUtau po zmienie tej opcji.</system:String>
   <system:String x:Key="prefs.off">Wył.</system:String>
@@ -457,10 +453,9 @@ Uwaga: ta opcja usuwa presety własne.</system:String>
   <!--<system:String x:Key="prefs.playback.test">Test</system:String>-->
   <system:String x:Key="prefs.rendering">Renderowanie</system:String>
   <system:String x:Key="prefs.rendering.defaultrenderer">Domyślny silnik (dla klasycznych voicebanków)</system:String>
-  <system:String x:Key="prefs.rendering.diffsingerdepth">Głębia renderu DiffSinger</system:String>
-  <!--<system:String x:Key="prefs.rendering.diffsingersteps">DiffSinger Render Steps for Acoustic</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepspitch">DiffSinger Render Steps for Pitch</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepsvariance">DiffSinger Render Steps for Variance</system:String>-->
+  <!---->
+  <!---->
+  <!---->
   <!--<system:String x:Key="prefs.rendering.onnxgpu">GPU</system:String>-->
   <system:String x:Key="prefs.rendering.onnxrunner">Akcelerator SI</system:String>
   <system:String x:Key="prefs.rendering.phasecomp">Kompensacja fazowa</system:String>

@@ -67,10 +67,8 @@
 
   <system:String x:Key="errors.caption">錯誤</system:String>
   <system:String x:Key="errors.details">錯誤詳情</system:String>
-  <!--<system:String x:Key="errors.diffsinger.downloadvocoder">Error loading vocoder "{0}". Please download vocoder from {1}</system:String>-->
-  <system:String x:Key="errors.diffsinger.downloadvocoder1">載入聲碼器時錯誤 </system:String>
-  <system:String x:Key="errors.diffsinger.downloadvocoder2">. 請從下列位置下載聲碼器： </system:String>
-  <!--<system:String x:Key="errors.editing.autopitch.unsupported">The current voicebank doesn't support generating pitch curve. Please use a Diffsinger or Enunu voicebank.</system:String>-->
+  <!---->
+  <!---->
   <!--<system:String x:Key="errors.encryptedarchive">Encrypted archive file isn't supported. Please extract the archive file manually.</system:String>-->
   <!--<system:String x:Key="errors.expression.abbrlong">Abbreviation must be between 1 and 4 characters long</system:String>-->
   <!--<system:String x:Key="errors.expression.abbrset">Abbreviation must be set</system:String>-->
@@ -183,7 +181,6 @@
   <system:String x:Key="menu.file">檔案</system:String>
   <system:String x:Key="menu.file.exit">結束</system:String>
   <system:String x:Key="menu.file.exportaudio">匯出音訊</system:String>
-  <system:String x:Key="menu.file.exportds">匯出 DiffSinger 指令碼至</system:String>
   <system:String x:Key="menu.file.exportmidi">匯出 MIDI 檔案</system:String>
   <!--<system:String x:Key="menu.file.exportmixdown">Mixdown To Wav File</system:String>-->
   <system:String x:Key="menu.file.exportproject">匯出專案</system:String>
@@ -406,7 +403,7 @@ Syntax: prefix,suffix</system:String>-->
   <system:String x:Key="prefs.appearance.degree.numbered">簡譜（1 2 3 4 5 6 7）</system:String>
   <system:String x:Key="prefs.appearance.degree.off">關閉</system:String>
   <!--<system:String x:Key="prefs.appearance.degree.solfege">Solfège (do re mi fa sol la ti)</system:String>-->
-  <!--<system:String x:Key="prefs.appearance.diffsingerlangcodehide">Hide language prefix from phoneme editor</system:String>-->
+  <!---->
   <system:String x:Key="prefs.appearance.lang">語言</system:String>
   <system:String x:Key="prefs.appearance.showghostnotes">在鋼琴卷軸上顯示其他音軌的音符</system:String>
   <system:String x:Key="prefs.appearance.showicon">在鋼琴卷軸上顯示角色頭像</system:String>
@@ -418,9 +415,9 @@ Syntax: prefix,suffix</system:String>-->
   <system:String x:Key="prefs.appearance.trackcolor">在介面上使用音軌顏色</system:String>
   <system:String x:Key="prefs.cache">快取</system:String>
   <!--<system:String x:Key="prefs.cache.clearonquit">Clear cache on quit</system:String>-->
-  <!--<system:String x:Key="prefs.cache.diffsingertensorcache">DiffSinger Tensor Cache</system:String>-->
+  <!---->
   <system:String x:Key="prefs.caption">偏好設定</system:String>
-  <!--<system:String x:Key="prefs.diffsinger">DiffSinger</system:String>-->
+  <!---->
   <system:String x:Key="prefs.editing">編輯</system:String>
   <system:String x:Key="prefs.note.restart">注意: 請重新啟動 OpenUtau 以套用變更</system:String>
   <system:String x:Key="prefs.off">關閉</system:String>
@@ -453,10 +450,9 @@ Syntax: prefix,suffix</system:String>-->
   <system:String x:Key="prefs.playback.test">測試</system:String>
   <system:String x:Key="prefs.rendering">算繪</system:String>
   <system:String x:Key="prefs.rendering.defaultrenderer">傳統音源的預設算繪器</system:String>
-  <system:String x:Key="prefs.rendering.diffsingerdepth">DiffSinger 算繪深度</system:String>
-  <!--<system:String x:Key="prefs.rendering.diffsingersteps">DiffSinger Render Steps for Acoustic</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepspitch">DiffSinger Render Steps for Pitch</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepsvariance">DiffSinger Render Steps for Variance</system:String>-->
+  <!---->
+  <!---->
+  <!---->
   <!--<system:String x:Key="prefs.rendering.onnxgpu">GPU</system:String>-->
   <!--<system:String x:Key="prefs.rendering.onnxrunner">Machine Learning Runner</system:String>-->
   <system:String x:Key="prefs.rendering.phasecomp">相位補償</system:String>

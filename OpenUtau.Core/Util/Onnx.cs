@@ -112,7 +112,7 @@ namespace OpenUtau.Core {
                      );
                     break;
                 case "CoreML":
-                    // Note: MLProgram format has stricter validation and may fail with complex DiffSinger models
+                    // Note: MLProgram format has stricter validation and may fail with complex models
                     // that have topological sorting issues (e.g., variance_predictor with diffusion embeddings)
                     // so we always use NeuralNetwork format (default) as MLProgram fails with complex models.
                     options.AppendExecutionProvider("CoreML", new Dictionary<string, string> {

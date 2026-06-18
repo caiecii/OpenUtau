@@ -159,12 +159,6 @@ namespace OpenUtau.Core.Util {
             public int WorldlineR = 0;
             public string OnnxRunner = string.Empty;
             public int OnnxGpu = 0;
-            public double DiffSingerDepth = 1.0;
-            public int DiffSingerSteps = 20;
-            public int DiffSingerStepsVariance = 20;
-            public int DiffSingerStepsPitch = 10;
-            public bool DiffSingerTensorCache = true;
-            public bool DiffSingerLangCodeHide = false;
             public bool SkipRenderingMutedTracks = false;
             public string Language = string.Empty;
             public string? SortingOrder = null;

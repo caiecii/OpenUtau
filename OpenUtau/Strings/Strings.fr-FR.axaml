@@ -68,10 +68,8 @@ Nouveau tempo :</system:String>
 
   <system:String x:Key="errors.caption">Erreur</system:String>
   <system:String x:Key="errors.details">Détails des erreurs</system:String>
-  <!--<system:String x:Key="errors.diffsinger.downloadvocoder">Error loading vocoder "{0}". Please download vocoder from {1}</system:String>-->
-  <system:String x:Key="errors.diffsinger.downloadvocoder1">Erreur lors du chargement du vocoder </system:String>
-  <system:String x:Key="errors.diffsinger.downloadvocoder2">. Veuillez télécharger le vocoder sur </system:String>
-  <!--<system:String x:Key="errors.editing.autopitch.unsupported">The current voicebank doesn't support generating pitch curve. Please use a Diffsinger or Enunu voicebank.</system:String>-->
+  <!---->
+  <!---->
   <system:String x:Key="errors.encryptedarchive">Les fichiers compressés encryptés ne sont pas supportés. Veuillez extraire le fichier compressé manuellement.</system:String>
   <system:String x:Key="errors.expression.abbrlong">Les abréviations doivent faire entre 1 et 4 caractères</system:String>
   <system:String x:Key="errors.expression.abbrset">Les abréviations ne peuvent pas être nulles</system:String>
@@ -184,7 +182,6 @@ Nouveau tempo :</system:String>
   <system:String x:Key="menu.file">Fichier</system:String>
   <system:String x:Key="menu.file.exit">Quitter</system:String>
   <system:String x:Key="menu.file.exportaudio">Exporter l'audio</system:String>
-  <system:String x:Key="menu.file.exportds">Exporter les scripts DiffSingers vers</system:String>
   <system:String x:Key="menu.file.exportmidi">Exporter un MIDI</system:String>
   <system:String x:Key="menu.file.exportmixdown">Mixer en fichier Wav</system:String>
   <system:String x:Key="menu.file.exportproject">Exporter le projet</system:String>
@@ -407,7 +404,7 @@ Attention : cela va effacer les préréglages.</system:String>
   <system:String x:Key="prefs.appearance.degree.numbered">Numéroté (1 2 3 4 5 6 7)</system:String>
   <!--<system:String x:Key="prefs.appearance.degree.off">Off</system:String>-->
   <system:String x:Key="prefs.appearance.degree.solfege">Solfège (do ré mi fa sol la si)</system:String>
-  <!--<system:String x:Key="prefs.appearance.diffsingerlangcodehide">Hide language prefix from phoneme editor</system:String>-->
+  <!---->
   <system:String x:Key="prefs.appearance.lang">Langue</system:String>
   <system:String x:Key="prefs.appearance.showghostnotes">Montrer les notes des autres pistes sur le piano roll</system:String>
   <system:String x:Key="prefs.appearance.showicon">Montrer l'icône sur le piano roll</system:String>
@@ -419,9 +416,8 @@ Attention : cela va effacer les préréglages.</system:String>
   <system:String x:Key="prefs.appearance.trackcolor">Utiliser la couleur de la piste dans l'UI</system:String>
   <!--<system:String x:Key="prefs.cache">Cache</system:String>-->
   <system:String x:Key="prefs.cache.clearonquit">Effacer le cache à la fermeture du logiciel</system:String>
-  <system:String x:Key="prefs.cache.diffsingertensorcache">Cache du Tensor de DiffSinger</system:String>
   <system:String x:Key="prefs.caption">Préférences</system:String>
-  <!--<system:String x:Key="prefs.diffsinger">DiffSinger</system:String>-->
+  <!---->
   <system:String x:Key="prefs.editing">Édition</system:String>
   <system:String x:Key="prefs.note.restart">Note: veuillez redémarrer OpenUtau après avoir changé cette option.</system:String>
   <system:String x:Key="prefs.off">Désactivé</system:String>
@@ -454,10 +450,9 @@ Attention : cela va effacer les préréglages.</system:String>
   <!--<system:String x:Key="prefs.playback.test">Test</system:String>-->
   <system:String x:Key="prefs.rendering">Rendu</system:String>
   <system:String x:Key="prefs.rendering.defaultrenderer">Système de rendu par défaut (pour les voix classiques)</system:String>
-  <system:String x:Key="prefs.rendering.diffsingerdepth">Render Depth du DiffSinger</system:String>
-  <!--<system:String x:Key="prefs.rendering.diffsingersteps">DiffSinger Render Steps for Acoustic</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepspitch">DiffSinger Render Steps for Pitch</system:String>-->
-  <!--<system:String x:Key="prefs.rendering.diffsingerstepsvariance">DiffSinger Render Steps for Variance</system:String>-->
+  <!---->
+  <!---->
+  <!---->
   <!--<system:String x:Key="prefs.rendering.onnxgpu">GPU</system:String>-->
   <!--<system:String x:Key="prefs.rendering.onnxrunner">Machine Learning Runner</system:String>-->
   <system:String x:Key="prefs.rendering.phasecomp">Compensation de phase</system:String>

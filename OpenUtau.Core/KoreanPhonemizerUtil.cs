@@ -990,7 +990,7 @@ namespace OpenUtau.Core {
         }
 
         /// <summary>
-        /// (for diffsinger phonemizer)
+        /// (for machine-learning phonemizers)
         /// Conducts phoneme variation automatically with prevNeighbour, note, nextNeighbour.  
         /// <br/><br/> prevNeighbour, note, nextNeighbour를 입력받아 자동으로 음운 변동을 진행합니다.
         /// </summary>
