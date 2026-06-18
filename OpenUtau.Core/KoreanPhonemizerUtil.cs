@@ -1235,7 +1235,7 @@ namespace OpenUtau.Core {
         }
         
         public static Note[] ChangeLyric(Note[] group, string lyric) {
-            // for ENUNU Phonemizer
+            // Replace a group's leading lyric while retaining note metadata.
             var oldNote = group[0];
             group[0] = new Note {
                 lyric = lyric,
@@ -1262,7 +1262,7 @@ namespace OpenUtau.Core {
         }
         
         public static void RomanizeNotes(Note[][] groups, bool _modifyLyrics = false, Dictionary<string, string[]> firstConsonants = null, Dictionary<string, string[]> vowels = null, Dictionary<string, string[]> lastConsonants = null, string semivowelSeparator = " ") {
-            // for ENUNU & DIFFS Phonemizer
+            // Romanize Korean lyrics for phonemizers.
 
             int noteIdx = 0;
             string lyric;

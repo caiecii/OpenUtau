@@ -29,7 +29,6 @@ namespace OpenUtau.Classic {
     public class VoicebankLoader {
         public const string kCharTxt = "character.txt";
         public const string kCharYaml = "character.yaml";
-        public const string kEnuconfigYaml = "enuconfig.yaml";
         public const string kConfigYaml = "config.yaml";
         public const string kOtoIni = "oto.ini";
 
@@ -93,12 +92,7 @@ namespace OpenUtau.Classic {
                 voicebank.SingerType = SingerTypeUtils.SingerTypeFromName[singerType];
             } else {
                 // Legacy detection code. Do not add more here.
-                var enuconfigFile = Path.Combine(dir, kEnuconfigYaml);
-                if (File.Exists(enuconfigFile)) {
-                    voicebank.SingerType = USingerType.Enunu;
-                } else if (voicebank.SingerType != USingerType.Enunu) {
-                    voicebank.SingerType = USingerType.Classic;
-                }
+                voicebank.SingerType = USingerType.Classic;
             }
             Encoding encoding = Encoding.GetEncoding("shift_jis");
             if (!string.IsNullOrEmpty(bankConfig?.TextFileEncoding)) {

@@ -11,14 +11,10 @@ namespace OpenUtau.Core.Render {
         public const string CLASSIC = "CLASSIC";
         public const string WORLDLINE_R = "WORLDLINE-R";
         public const string WORLDLINE_R2 = "WORLDLINE-R2";
-        public const string ENUNU = "ENUNU";
         public const string VOGEN = "VOGEN";
-        public const string VOICEVOX = "VOICEVOX";
 
         static readonly string[] classicRenderers = new[] { WORLDLINE_R, CLASSIC };
-        static readonly string[] enunuRenderers = new[] { ENUNU };
         static readonly string[] vogenRenderers = new[] { VOGEN };
-        static readonly string[] voicevoxRenderers = new[] { VOICEVOX };
         static readonly string[] noRenderers = Array.Empty<string>();
         static readonly IReadOnlyList<string> rendererOptions = new[] { WORLDLINE_R, CLASSIC };
 
@@ -26,12 +22,8 @@ namespace OpenUtau.Core.Render {
             switch (singerType) {
                 case USingerType.Classic:
                     return classicRenderers;
-                case USingerType.Enunu:
-                    return enunuRenderers;
                 case USingerType.Vogen:
                     return vogenRenderers;
-                case USingerType.Voicevox:
-                    return voicevoxRenderers;
                 default:
                     return noRenderers;
             }
@@ -54,12 +46,8 @@ namespace OpenUtau.Core.Render {
                 return new WorldlineRenderer(version: 2);
             } else if (renderer?.StartsWith(WORLDLINE_R.Substring(0, 9)) ?? false) {
                 return new WorldlineRenderer(version: 1);
-            } else if (renderer == ENUNU) {
-                return new Enunu.EnunuRenderer();
             } else if (renderer == VOGEN) {
                 return new Vogen.VogenRenderer();
-            } else if (renderer == VOICEVOX) {
-                return new Voicevox.VoicevoxRenderer();
             }
             return null;
         }

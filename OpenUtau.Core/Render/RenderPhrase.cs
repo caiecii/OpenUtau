@@ -72,7 +72,7 @@ namespace OpenUtau.Core.Render {
         public readonly bool direct;
         public readonly Vector2[] envelope;
 
-        // voicevox & enunu args
+        // Per-phoneme pitch shift.
         public readonly int toneShift;
 
         public readonly UOto oto;

@@ -27,7 +27,7 @@ namespace OpenUtau.App.ViewModels {
         [Reactive] public string? Info { get; set; }
         [Reactive] public bool HasWebsite { get; set; }
         public bool IsClassic => Singer != null && Singer.SingerType == USingerType.Classic;
-        public bool UseSearchAlias => Singer != null && (Singer.SingerType == USingerType.Classic || Singer.SingerType == USingerType.Enunu);
+        public bool UseSearchAlias => Singer?.SingerType == USingerType.Classic;
         public ObservableCollectionExtended<USubbank> Subbanks => subbanks;
         public ObservableCollectionExtended<UOto> Otos => otos;
         public ObservableCollectionExtended<UOto> DisplayedOtos { get; set; } = new ObservableCollectionExtended<UOto>();
@@ -115,7 +115,7 @@ namespace OpenUtau.App.ViewModels {
                             }
                         ).ToList();
                         var singerTypes = new string[] {
-                            "utau", "enunu", "voicevox"
+                            "utau"
                         };
                         setSingerTypeMenuItems = singerTypes.Select(singerType =>
                             new MenuItemViewModel((SingerTypeUtils.SingerTypeNames.TryGetValue(singer.SingerType, out var name) ? name : "") == singerType) {
@@ -335,7 +335,7 @@ namespace OpenUtau.App.ViewModels {
                         //Vogen voicebank is a singlefile
                         OS.GotoFile(location);
                     } else {
-                        //classic or ENUNU voicebank is a folder
+                        // Classic voicebanks are folders.
                         OS.OpenFolder(location);
                     }
                 }

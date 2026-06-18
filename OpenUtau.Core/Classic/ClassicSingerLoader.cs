@@ -7,10 +7,6 @@ namespace OpenUtau.Classic {
     public static class ClassicSingerLoader {
         static USinger AdjustSingerType(Voicebank v) {
             switch (v.SingerType) {
-                case USingerType.Enunu:
-                    return new Core.Enunu.EnunuSinger(v) as USinger;
-                case USingerType.Voicevox:
-                    return new Core.Voicevox.VoicevoxSinger(v) as USinger;
                 default:
                     return new ClassicSinger(v) as USinger;
             }
