@@ -331,13 +331,7 @@ namespace OpenUtau.App.ViewModels {
             try {
                 if (Singer != null) {
                     var location = Singer.Location;
-                    if (File.Exists(location)) {
-                        //Vogen voicebank is a singlefile
-                        OS.GotoFile(location);
-                    } else {
-                        // Classic voicebanks are folders.
-                        OS.OpenFolder(location);
-                    }
+                    OS.OpenFolder(location);
                 }
             } catch (Exception e) {
                 DocManager.Inst.ExecuteCmd(new ErrorMessageNotification(e));

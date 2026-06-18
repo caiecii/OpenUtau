@@ -533,10 +533,6 @@ namespace OpenUtau.App.Views {
                 return;
             }
             try {
-                if (file.EndsWith(Core.Vogen.VogenSingerInstaller.FileExt)) {
-                    Core.Vogen.VogenSingerInstaller.Install(file);
-                    return;
-                }
                 if (file.EndsWith(PackageManager.OudepExt)) {
                     await PackageManager.Inst.InstallFromFileAsync(file);
                     return;
@@ -835,7 +831,6 @@ namespace OpenUtau.App.Views {
                 .Concat(AudioExts)
                 .Append(".dll")
                 .Append(".exe")
-                .Append(Core.Vogen.VogenSingerInstaller.FileExt)
                 .Append(PackageManager.OudepExt)
                 .ToArray();
             var files = args.Data?.GetFiles()?.Where(i => i != null).Select(i => i.Path.LocalPath).ToArray() ?? new string[] { };
@@ -909,8 +904,6 @@ namespace OpenUtau.App.Views {
                     Log.Error(e, $"Failed to install singer {file}");
                     _ = await MessageBox.ShowError(this, new MessageCustomizableException($"Failed to install singer {file}", $"<translate:errors.failed.installsinger>: {file}", e));
                 }
-            } else if (ext == Core.Vogen.VogenSingerInstaller.FileExt) {
-                Core.Vogen.VogenSingerInstaller.Install(file);
             } else if (ext == ".dll") {
                 var result = await MessageBox.Show(
                     this,

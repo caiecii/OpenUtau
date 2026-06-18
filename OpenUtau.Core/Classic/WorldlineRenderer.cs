@@ -110,7 +110,7 @@ namespace OpenUtau.Classic {
                                     $"<translate:errors.failed.synth.cutoffbeforeoffset>\n{item.phone.phoneme}",
                                     e);
                             }
-                            throw e;
+                            throw;
                         }
                     }
                     int frames = (int)Math.Ceiling(result.estimatedLengthMs / frameMs);

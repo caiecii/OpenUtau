@@ -14,10 +14,10 @@ namespace OpenUtau.Plugin.Builtin {
         /// This phonemizer always uses seseo, because the Japanese "z" is very different from the Spanish "z".
         ///</summary>
         protected override string[] GetVowels() => vowels;
-        private static readonly string[] vowels =
+        private new static readonly string[] vowels =
             "a i u e o".Split();
         protected override string[] GetConsonants() => consonants;
-        private static readonly string[] consonants =
+        private new static readonly string[] consonants =
             "b by B By ch d dy D Dy f g gy G Gy h hh hy I j k ky l ly m my n ny p py r ry rr rry s sh t ty ts U w x y Y z".Split();
         protected override string GetDictionaryName() => "cmudict_es.txt";
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Concentus;
 using Concentus.Oggfile;
 using Concentus.Structs;
 using NAudio.Wave;
@@ -9,7 +10,7 @@ namespace OpenUtau.Core.Format {
     public class OpusOggWaveReader : WaveStream {
         WaveFormat waveFormat;
         MemoryStream oggStream;
-        OpusDecoder decoder;
+        IOpusDecoder decoder;
         OpusOggReadStream decodeStream;
         byte[] wavData;
 
@@ -20,13 +21,13 @@ namespace OpenUtau.Core.Format {
             }
             oggStream.Seek(0, SeekOrigin.Begin);
             waveFormat = new WaveFormat(48000, 16, 2);
-            decoder = new OpusDecoder(48000, 2);
+            decoder = OpusCodecFactory.CreateDecoder(48000, 2);
             decodeStream = new OpusOggReadStream(decoder, oggStream);
         }
 
         byte[] Decode() {
             using (var wavStream = new MemoryStream()) {
-                var decoder = new OpusDecoder(48000, 2);
+                var decoder = OpusCodecFactory.CreateDecoder(48000, 2);
                 var oggIn = new OpusOggReadStream(decoder, oggStream);
                 while (oggIn.HasNextPacket) {
                     short[] packet = oggIn.DecodeNextPacket();

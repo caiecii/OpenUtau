@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using OpenUtau.Api;
 using OpenUtau.Core.G2p;
@@ -16,9 +16,9 @@ namespace OpenUtau.Plugin.Builtin {
         /// It also has support for extra Spanish consonants, but only through phonetic input.
         /// </summary>
 
-        private readonly string[] vowels = "a,e,i,o,u,3,0".Split(',');
-        private readonly string[] consonants = "b,d,dz,dZ,f,g,gn,j,k,l,m,M,n,N,p,r,rr,s,S,t,ts,tS,v,w,y,z,B,D,G,h,T,x,Y,'".Split(',');
-        private readonly Dictionary<string, string> dictionaryReplacements = ("a=a;e=e;i=i;o=o;u=u;EE=3;OO=0;" +
+        private new readonly string[] vowels = "a,e,i,o,u,3,0".Split(',');
+        private new readonly string[] consonants = "b,d,dz,dZ,f,g,gn,j,k,l,m,M,n,N,p,r,rr,s,S,t,ts,tS,v,w,y,z,B,D,G,h,T,x,Y,'".Split(',');
+        private new readonly Dictionary<string, string> dictionaryReplacements = ("a=a;e=e;i=i;o=o;u=u;EE=3;OO=0;" +
                 "b=b;d=d;dz=dz;dZZ=dZ;f=f;g=g;j=y;" + "JJ=gn;k=k;l=l;LL=j;m=m;n=n;nf=M;ng=N;p=p;r=r;s=s;SS=S;t=t;ts=ts;tSS=tS;v=v;w=w;z=z").Split(';')
                 .Select(entry => entry.Split('='))
                 .Where(parts => parts.Length == 2)

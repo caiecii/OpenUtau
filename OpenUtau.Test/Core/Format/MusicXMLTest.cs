@@ -137,7 +137,7 @@ namespace OpenUtau.Core.Format {
             var project = MusicXML.LoadProject(Path.Join(basePath, "33b-Spanners-Tie.musicxml"));
             var part = project.parts.First() as UVoicePart;
 
-            Assert.Equal(1, part.notes.Count());
+            Assert.Single(part.notes);
             var note = part.notes.First();
             Assert.Equal(0, note.position);
             Assert.Equal(480*8, note.duration);

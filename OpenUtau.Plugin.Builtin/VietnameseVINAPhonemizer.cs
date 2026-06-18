@@ -1227,11 +1227,7 @@ namespace OpenUtau.Plugin.Builtin {
                     string B2 = loi.Substring(0, 1);
                     bool M = (B1 == B2) && vow != "ng0";
                     bool NoVCP = (H && prevtontaiCcuoi) || M;
-                    bool prevkocoCcuoi;
                     bool Cvoiced = PR.EndsWith("J") || PR.EndsWith("n") || PR.EndsWith("m") || PR.EndsWith("N");
-                    if (prevtontaiCcuoi == true) {
-                        prevkocoCcuoi = false;
-                    } else prevkocoCcuoi = true;
                     if (note.lyric.StartsWith("?")) {
                         phoneme = note.lyric.Substring(1);
                     } else {

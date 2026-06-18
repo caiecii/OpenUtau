@@ -31,7 +31,7 @@ namespace OpenUtau.Classic {
                         $"<translate:errors.failed.synth.cutoffbeforeoffset>\n{item.phone.phoneme}",
                         e);
                 }
-                throw e;
+                throw;
             }
         }
 

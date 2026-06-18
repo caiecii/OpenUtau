@@ -53,7 +53,7 @@ namespace OpenUtau.Plugins {
                 }
             }, new string[] { "- hh_C3", "hh ay_W", "ay -_C3" });
         }
-        public void SyllableTest(string lyric, string hint, string[] aliases) {
+        private void SyllableTest(string lyric, string hint, string[] aliases) {
             RunPhonemizeTest("en_arpa-plus", new NoteParams[] { new NoteParams { lyric = lyric, hint = hint, tone = "C3", phonemes = SamePhonemeParams(4, 0, 0, "") } }, aliases);
         }
         [Theory]

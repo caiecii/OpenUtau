@@ -166,10 +166,10 @@ namespace OpenUtau.Core.Format {
                 project.ValidateFull();
             }
             if (project.ustxVersion < new Version(0, 6)) {
-#pragma warning disable CS0612 // Type or member is obsolete
+#pragma warning disable CS0618 // Legacy fields are required to migrate pre-0.6 projects.
                 project.timeSignatures = new List<UTimeSignature> { new UTimeSignature(0, project.beatPerBar, project.beatUnit) };
                 project.tempos = new List<UTempo> { new UTempo(0, project.bpm) };
-#pragma warning restore CS0612 // Type or member is obsolete
+#pragma warning restore CS0618
                 project.ValidateFull();
             }
             if (project.ustxVersion < new Version(0, 7)) {

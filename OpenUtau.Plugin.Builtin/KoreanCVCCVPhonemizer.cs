@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Melanchall.DryWetMidi.MusicTheory;
@@ -279,7 +279,7 @@ namespace OpenUtau.Plugin.Builtin {
         }
 
         // Store singer in field, will try reading presamp.ini later
-        private USinger singer;
+        private new USinger singer;
 
         public override void SetSinger(USinger singer) => this.singer = singer;
         
@@ -294,8 +294,6 @@ namespace OpenUtau.Plugin.Builtin {
             char[] nextKoreanLyrics = { '　', '　', '　' };
 
             int totalDuration = notes.Sum(n => n.duration);
-            int vcLength = 120;
-            
             var phoneticHint = RenderPhoneticHint(singer, notes[0], totalDuration);
             if (phoneticHint != null) {
                 return (Result) phoneticHint;

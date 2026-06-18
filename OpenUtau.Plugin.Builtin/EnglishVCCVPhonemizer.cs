@@ -225,7 +225,6 @@ namespace OpenUtau.Plugin.Builtin {
             string v = ReplacePhoneme(syllable.v, syllable.vowelTone);
             List<string> vowels = new List<string> { v };
             var lastC = cc.Length - 1;
-            var firstC = 0;
             string[] CurrentWordCc = syllable.CurrentWordCc.Select(c => ReplacePhoneme(c, syllable.tone)).ToArray();
             string[] PreviousWordCc = syllable.PreviousWordCc.Select(c => ReplacePhoneme(c, syllable.tone)).ToArray();
             int prevWordConsonantsCount = syllable.prevWordConsonantsCount;

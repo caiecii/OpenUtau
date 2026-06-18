@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using OpenUtau.Api;
@@ -10,9 +10,9 @@ namespace OpenUtau.Plugin.Builtin {
 
     public class FrenchVCCVPhonemizer : SyllableBasedPhonemizer {
 
-        private readonly string[] vowels = "A,E,e,2,9,i,o,O,u,y,a,U,0,A',E',e',2',9',i',o',O',u',y',a',U',0'".Split(",");
-        private readonly string[] consonants = "b,d,f,g,Z,k,l,m,n,p,R,s,S,t,v,w,j,z,J,H,h,4,r,_hh".Split(",");
-        private readonly Dictionary<string, string> dictionaryReplacements = (
+        private new readonly string[] vowels = "A,E,e,2,9,i,o,O,u,y,a,U,0,A',E',e',2',9',i',o',O',u',y',a',U',0'".Split(",");
+        private new readonly string[] consonants = "b,d,f,g,Z,k,l,m,n,p,R,s,S,t,v,w,j,z,J,H,h,4,r,_hh".Split(",");
+        private new readonly Dictionary<string, string> dictionaryReplacements = (
             "aa=A;ai=E;ei=e;eu=2;ee=2;oe=9;ii=i;au=o;oo=O;ou=u;uu=y;an=a;in=U;un=U;on=0;uy=H;" +
             "bb=b;dd=d;ff=f;gg=g;jj=Z;kk=k;ll=l;mm=m;nn=n;pp=p;rr=R;ss=s;ch=S;tt=t;vv=v;ww=w;yy=j;zz=z;gn=J;4=4;hh=h;").Split(';')
                 .Select(entry => entry.Split('='))
@@ -35,7 +35,6 @@ namespace OpenUtau.Plugin.Builtin {
             string[] cc = syllable.cc;
             string v = syllable.v;
             var lastC = cc.Length - 1;
-            var firstC = 0;
 
             string basePhoneme;
             var phonemes = new List<string>();

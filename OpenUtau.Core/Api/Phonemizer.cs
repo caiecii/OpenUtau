@@ -208,7 +208,6 @@ namespace OpenUtau.Api {
         /// <summary>
         /// Utility method to convert tick position to millisecond position.
         /// </summary>
-        [Obsolete] // TODO: update usages
         protected double TickToMs(int tick) {
             return timeAxis.TickPosToMsPos(tick);
         }
@@ -216,7 +215,6 @@ namespace OpenUtau.Api {
         /// <summary>
         /// Utility method to convert millisecond position to tick position.
         /// </summary>
-        [Obsolete] // TODO: update usages
         protected int MsToTick(double ms) {
             return timeAxis.MsPosToTickPos(ms);
         }

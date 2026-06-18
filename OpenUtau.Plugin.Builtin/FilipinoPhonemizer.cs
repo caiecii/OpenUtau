@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.IO;
@@ -29,7 +29,7 @@ namespace OpenUtau.Plugin.Builtin {
         protected override string[] GetConsonants() => consonants;
         protected override string GetDictionaryName() => "";
     
-        List<string> consExceptions = new List<string>();
+        new List<string> consExceptions = new List<string>();
 
         string[] diphthongs = new[] { "ay", "ey", "oy", "uy", "aw", "ew", "ow", "iw"  };
 

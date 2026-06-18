@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -373,7 +373,7 @@ namespace OpenUtau.Plugin.Builtin {
             return lastSound;
         }
 
-        private USinger singer;
+        private new USinger singer;
 
         // Store singer
         public override void SetSinger(USinger singer) => this.singer = singer;

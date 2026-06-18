@@ -199,7 +199,7 @@ namespace OpenUtau.Plugin.Builtin {
                 Note? prevNoteNew = prevNote;
                 Note? nextNoteNew = nextNote;
                 if (prevNote != null) {
-                    if (KoreanPhonemizerUtil.IsHangeul(prevNote.Value.lyric) != null) {
+                    if (KoreanPhonemizerUtil.IsHangeul(prevNote.Value.lyric)) {
                         if (prevNote != null) {
                             prevNoteNew = new Note() {
                                 lyric = KoreanPhonemizerUtil.TryParseKoreanRomaji(prevNote.Value.lyric),

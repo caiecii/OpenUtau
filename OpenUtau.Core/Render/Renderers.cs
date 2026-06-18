@@ -11,10 +11,8 @@ namespace OpenUtau.Core.Render {
         public const string CLASSIC = "CLASSIC";
         public const string WORLDLINE_R = "WORLDLINE-R";
         public const string WORLDLINE_R2 = "WORLDLINE-R2";
-        public const string VOGEN = "VOGEN";
 
         static readonly string[] classicRenderers = new[] { WORLDLINE_R, CLASSIC };
-        static readonly string[] vogenRenderers = new[] { VOGEN };
         static readonly string[] noRenderers = Array.Empty<string>();
         static readonly IReadOnlyList<string> rendererOptions = new[] { WORLDLINE_R, CLASSIC };
 
@@ -22,8 +20,6 @@ namespace OpenUtau.Core.Render {
             switch (singerType) {
                 case USingerType.Classic:
                     return classicRenderers;
-                case USingerType.Vogen:
-                    return vogenRenderers;
                 default:
                     return noRenderers;
             }
@@ -46,8 +42,6 @@ namespace OpenUtau.Core.Render {
                 return new WorldlineRenderer(version: 2);
             } else if (renderer?.StartsWith(WORLDLINE_R.Substring(0, 9)) ?? false) {
                 return new WorldlineRenderer(version: 1);
-            } else if (renderer == VOGEN) {
-                return new Vogen.VogenRenderer();
             }
             return null;
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using OpenUtau.Api;
@@ -9,10 +9,10 @@ namespace OpenUtau.Plugin.Builtin {
     [Phonemizer("Filipino to Japanese Phonemizer", "FIL to JA", "Cadlaxa", language: "FIL")]
     public class FILtoJAPhonemizer : SyllableBasedPhonemizer {
         protected override string[] GetVowels() => vowels;
-        private string[] vowels =
+        private new string[] vowels =
             "a i u e o ay ey oy uy ow aw ew".Split();
         protected override string[] GetConsonants() => consonants;
-        private string[] consonants =
+        private new string[] consonants =
             "b by ch d dh f g gy h hy j k ky l ly m my n ny ng p py r ry s sh t ts th v w y z zh".Split();
         protected override string GetDictionaryName() => "";
         protected override Dictionary<string, string> GetDictionaryPhonemesReplacement() => dictionaryPhonemesReplacement;

@@ -30,7 +30,6 @@ namespace OpenUtau.Core {
             Directory.CreateDirectory(PathManager.Inst.SingersPath);
             var stopWatch = Stopwatch.StartNew();
             var singers = ClassicSingerLoader.FindAllSingers()
-                .Concat(Vogen.VogenSingerLoader.FindAllSingers())
                 .Distinct()
                 .ToList();
             Singers = singers

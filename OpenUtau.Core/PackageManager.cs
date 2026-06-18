@@ -212,9 +212,11 @@ namespace OpenUtau.Core {
                 throw new ArgumentException("Archive metadata does not match expected id/version");
             }
             var id = metadata.id;
+#pragma warning disable CS0612 // Legacy package metadata used name as its identifier.
             if (string.IsNullOrEmpty(id) && !string.IsNullOrEmpty(metadata.name)) {
                 id = metadata.name;
             }
+#pragma warning restore CS0612
             await Task.Run(() => {
                 var basePath = Path.Combine(PathManager.Inst.DependencyPath, id);
                 try {

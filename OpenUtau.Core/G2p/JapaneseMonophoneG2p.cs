@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.ML.OnnxRuntime;
@@ -45,7 +45,7 @@ namespace OpenUtau.Core.G2p {
         private static InferenceSession session;
         private static Dictionary<string, string[]> predCache = new Dictionary<string, string[]>();
 
-        protected Tuple<IG2p, InferenceSession> LoadPack(
+        protected new Tuple<IG2p, InferenceSession> LoadPack(
             byte[] data,
             Func<string, string> prepGrapheme = null,
             Func<string, string> prepPhoneme = null) {

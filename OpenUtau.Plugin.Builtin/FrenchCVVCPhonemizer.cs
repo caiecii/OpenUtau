@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using OpenUtau.Api;
@@ -12,9 +12,9 @@ namespace OpenUtau.Plugin.Builtin {
     //This is a first implementation and I'm already working on optimization 
     public class FrenchCVVCPhonemizer : SyllableBasedPhonemizer {
 
-        private readonly string[] vowels = "ah,ae,eh,ee,oe,ih,oh,oo,ou,uh,en,in,on,oi,ui,a,ai,e,i,o,u,eu".Split(",");
-        private readonly string[] consonants = "b,d,f,g,j,k,l,m,n,p,r,s,sh,t,v,w,y,z,gn,.,-,R,BR,_hh".Split(",");
-        private readonly Dictionary<string, string> dictionaryReplacements = (
+        private new readonly string[] vowels = "ah,ae,eh,ee,oe,ih,oh,oo,ou,uh,en,in,on,oi,ui,a,ai,e,i,o,u,eu".Split(",");
+        private new readonly string[] consonants = "b,d,f,g,j,k,l,m,n,p,r,s,sh,t,v,w,y,z,gn,.,-,R,BR,_hh".Split(",");
+        private new readonly Dictionary<string, string> dictionaryReplacements = (
             "aa=ah;ai=ae;ei=eh;eu=ee;ee=ee;oe=oe;ii=ih;au=oh;oo=oo;ou=ou;uu=uh;an=en;in=in;un=in;on=on;uy=ui;" +
             "bb=b;dd=d;ff=f;gg=g;jj=j;kk=k;ll=l;mm=m;nn=n;pp=p;rr=r;ss=s;ch=sh;tt=t;vv=v;ww=w;yy=y;zz=z;gn=gn;4=l;hh=h;").Split(';')
                 .Select(entry => entry.Split('='))
@@ -45,7 +45,6 @@ namespace OpenUtau.Plugin.Builtin {
             string[] cc = syllable.cc;
             string v = syllable.v;
             var lastC = cc.Length - 1;
-            var firstC = 0;
 
             string basePhoneme;
             var phonemes = new List<string>();
@@ -379,7 +378,6 @@ namespace OpenUtau.Plugin.Builtin {
             string v = ending.prevV;
 
             var phonemes = new List<string>();
-            bool hasEnding = false;
 
             // Convert to Fraloids
             if (HasOto("a", ending.tone)) {

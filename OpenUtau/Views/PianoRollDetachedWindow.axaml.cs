@@ -7,11 +7,14 @@ using OpenUtau.Core.Util;
 
 namespace OpenUtau.App.Views {
     public partial class PianoRollDetachedWindow : Window {
-        private readonly PianoRoll pianoRoll;
+        private readonly PianoRoll? pianoRoll;
         private bool forceClose;
 
-        public PianoRollDetachedWindow(PianoRoll pianoRoll) {
+        public PianoRollDetachedWindow() {
             InitializeComponent();
+        }
+
+        public PianoRollDetachedWindow(PianoRoll pianoRoll) : this() {
             this.pianoRoll = pianoRoll;
             DataContext = pianoRoll.DataContext;
 
@@ -25,7 +28,7 @@ namespace OpenUtau.App.Views {
 
         public void WindowGotFocus(object sender, GotFocusEventArgs e) {
             if (e.Source is PianoRollDetachedWindow) {
-                pianoRoll.Focus();
+                pianoRoll?.Focus();
             }
         }
 
@@ -37,7 +40,7 @@ namespace OpenUtau.App.Views {
         }
 
         public void WindowDeactivated(object sender, EventArgs args) {
-            pianoRoll.LyricBox?.EndEdit();
+            pianoRoll?.LyricBox?.EndEdit();
         }
 
         public void ForceClose() {

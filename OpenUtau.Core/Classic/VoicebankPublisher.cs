@@ -52,7 +52,6 @@ namespace OpenUtau.Classic {
         ///Compress a voicebank into an optimized zip archive for distribution.
         ///This function only supports voicebanks that follow the classic packaging model,
         /// including supported singer formats.
-        ///Vogen voicebanks aren't supported.
         ///</summary>
         public void Publish(USinger singer, string outputFile){
             var location = singer.Location;
@@ -63,7 +62,7 @@ namespace OpenUtau.Classic {
             //Write singer type into character.yaml
             try {
                 ModifyConfig(singer, config => config.SingerType = singer.SingerType.ToString().ToLower());
-            } catch (Exception e) {  }
+            } catch (Exception) {  }
             var packList = GetFilesToPack(location);
             int index = 0;
             int fileCount = packList.Count();

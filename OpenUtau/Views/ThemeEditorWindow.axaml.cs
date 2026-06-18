@@ -13,6 +13,8 @@ namespace OpenUtau.App.Views {
 
         public static bool IsOpen => _instance != null;
 
+        public ThemeEditorWindow() : this(string.Empty) { }
+
         private ThemeEditorWindow(string customThemePath) {
             InitializeComponent();
             DataContext = new ThemeEditorViewModel(customThemePath);

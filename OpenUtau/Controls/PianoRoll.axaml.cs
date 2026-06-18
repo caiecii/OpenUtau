@@ -45,6 +45,8 @@ namespace OpenUtau.App.Controls {
 
         private Window RootWindow => (Window)TopLevel.GetTopLevel(this)!;
 
+        public PianoRoll() : this(new PianoRollViewModel()) { }
+
         public PianoRoll(PianoRollViewModel model) {
             InitializeComponent();
             DataContext = ViewModel = model;

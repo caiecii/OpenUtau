@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using OpenUtau.Api;
@@ -9,10 +9,10 @@ namespace OpenUtau.Plugin.Builtin {
     [Phonemizer("English to Japanese Phonemizer", "EN to JA", "TUBS", language: "EN")]
     public class ENtoJAPhonemizer : SyllableBasedPhonemizer {
         protected override string[] GetVowels() => vowels;
-        private static readonly string[] vowels =
+        private new static readonly string[] vowels =
             "a i u e o ay ey oy ow aw".Split();
         protected override string[] GetConsonants() => consonants;
-        private static readonly string[] consonants =
+        private new static readonly string[] consonants =
             "b by ch d dh f g gy h hy j k ky l ly m my n ny ng p py r ry s sh t ts th v w y z zh".Split();
         protected override string GetDictionaryName() => "cmudict-0_7b.txt";
         protected override Dictionary<string, string> GetDictionaryPhonemesReplacement() => dictionaryPhonemesReplacement;

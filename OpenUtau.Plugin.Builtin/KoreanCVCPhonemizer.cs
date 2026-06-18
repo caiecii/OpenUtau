@@ -144,7 +144,7 @@ namespace OpenUtau.Plugin.Builtin {
         // ======================================================================================
 
 
-        private USinger singer;
+        private new USinger singer;
         public override void SetSinger(USinger singer) => this.singer = singer;
 
         // make it quicker to check multiple oto occurrences at once rather than spamming if else if
@@ -210,9 +210,9 @@ namespace OpenUtau.Plugin.Builtin {
             bool nextExist = false;
 
             char firstCL, firstPL, firstNL;
-            int lCL, lPL, lNL;
+            int lCL;
             int uCL, uPL, uNL;
-            lCL = 0; lPL = 0; lNL = 0;
+            lCL = 0;
 
             var phoneticHint = RenderPhoneticHint(singer, notes[0], totalDuration);
             if (phoneticHint != null) {
@@ -249,7 +249,7 @@ namespace OpenUtau.Plugin.Builtin {
             if (prevNeighbour != null) {
                 firstPL = (prevNeighbour?.lyric)[0]; // 가사 받아오기
                 prevExist = true; // 이전 노트 존재한다 반짝
-                if (firstPL == 'ㄹ') { lPL = 1; firstPL = (prevNeighbour?.lyric)[1]; } // ㄹㄹ 발음이다 반짝
+                if (firstPL == 'ㄹ') { firstPL = (prevNeighbour?.lyric)[1]; } // ㄹㄹ 발음이다 반짝
                 uPL = (int)firstPL; // 가사를 int로 변환
 
                 if ((uPL >= hangeulStartIndex) && (uPL <= hangeulEndIndex)) {
@@ -277,7 +277,7 @@ namespace OpenUtau.Plugin.Builtin {
             if (nextNeighbour != null) {
                 firstNL = (nextNeighbour?.lyric)[0];
                 nextExist = true;
-                if (firstNL == 'ㄹ') { lNL = 1; firstNL = (nextNeighbour?.lyric)[1]; }
+                if (firstNL == 'ㄹ') { firstNL = (nextNeighbour?.lyric)[1]; }
                 uNL = (int)firstNL;
 
                 if ((uNL >= hangeulStartIndex) && (uNL <= hangeulEndIndex)) {
