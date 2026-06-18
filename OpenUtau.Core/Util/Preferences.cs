@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using OpenUtau.Core.Render;
@@ -152,6 +153,7 @@ namespace OpenUtau.Core.Util {
             public string ThemeName = "Light";
             public int DegreeStyle;
             public bool UseTrackColor = false;
+            public bool GroupVoicebanksBySinger = true;
             public bool ClearCacheOnQuit = false;
             public bool PreRender = true;
             public int NumRenderThreads = 2;

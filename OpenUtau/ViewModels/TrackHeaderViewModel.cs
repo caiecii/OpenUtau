@@ -267,6 +267,29 @@ namespace OpenUtau.App.ViewModels {
             };
         }
 
+        private string GetSingerMenuGroupHeader(USinger singer) {
+            var idParts = (singer.Id ?? string.Empty)
+                .Split(new[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries);
+            return idParts.Length > 1 ? idParts[0] : singer.LocalizedName;
+        }
+
+        private IList<MenuItemViewModel> CreateSingerMenuItems(IEnumerable<USinger> singers) {
+            var orderedSingers = singers
+                .LocalizedOrderBy(singer => singer.LocalizedName)
+                .ToList();
+            if (!Preferences.Default.GroupVoicebanksBySinger) {
+                return orderedSingers.Select(CreateSingerMenuItem).Cast<MenuItemViewModel>().ToArray();
+            }
+            return orderedSingers
+                .GroupBy(GetSingerMenuGroupHeader, StringComparer.CurrentCultureIgnoreCase)
+                .OrderBy(group => group.Key, StringComparer.CurrentCultureIgnoreCase)
+                .Select(group => new MenuItemViewModel() {
+                    Header = group.Key + " ...",
+                    Items = group.Select(CreateSingerMenuItem).Cast<MenuItemViewModel>().ToArray(),
+                })
+                .ToArray();
+        }
+
         private bool TryChangePhonemizer(UTrack targetTrack, string phonemizerName) {
             try {
                 var factory = PhonemizerFactory.Get(phonemizerName);
@@ -290,18 +313,15 @@ namespace OpenUtau.App.ViewModels {
                 .Select(CreateSingerMenuItem));
                 items.Add(new MenuItemViewModel() {
                     Header = ThemeManager.GetString("tracks.favorite") + " ...",
-                    Items = Preferences.Default.FavoriteSingers
+                    Items = CreateSingerMenuItems(Preferences.Default.FavoriteSingers
                         .Select(id => SingerManager.Inst.Singers.Values.FirstOrDefault(singer => singer.Id == id))
-                        .OfType<USinger>()
-                        .LocalizedOrderBy(singer => singer.LocalizedName)
-                        .Select(CreateSingerMenuItem).ToArray(),
+                        .OfType<USinger>()),
                 });
                 var keys = SingerManager.Inst.SingerGroups.Keys.OrderBy(k => k);
                 foreach (var key in keys) {
                     items.Add(new MenuItemViewModel() {
                         Header = $"{key} ...",
-                        Items = SingerManager.Inst.SingerGroups[key]
-                            .Select(CreateSingerMenuItem).ToArray(),
+                        Items = CreateSingerMenuItems(SingerManager.Inst.SingerGroups[key]),
                     });
                 }
             } else {

@@ -97,6 +97,7 @@ namespace OpenUtau.App.ViewModels {
         [Reactive] public string ThemeName { get; set; }
         [Reactive] public int DegreeStyle { get; set; }
         [Reactive] public bool UseTrackColor { get; set; }
+        [Reactive] public bool GroupVoicebanksBySinger { get; set; }
         [Reactive] public bool ShowPortrait { get; set; }
         [Reactive] public bool ShowIcon { get; set; }
         [Reactive] public bool ShowGhostNotes { get; set; }
@@ -162,6 +163,7 @@ namespace OpenUtau.App.ViewModels {
             ThemeName = Preferences.Default.ThemeName;
             DegreeStyle = Preferences.Default.DegreeStyle;
             UseTrackColor = Preferences.Default.UseTrackColor;
+            GroupVoicebanksBySinger = Preferences.Default.GroupVoicebanksBySinger;
             ShowPortrait = Preferences.Default.ShowPortrait;
             ShowIcon = Preferences.Default.ShowIcon;
             ShowGhostNotes = Preferences.Default.ShowGhostNotes;
@@ -263,6 +265,11 @@ namespace OpenUtau.App.ViewModels {
                     Preferences.Default.UseTrackColor = trackColor;
                     Preferences.Save();
                     MessageBus.Current.SendMessage(new PianorollRefreshEvent("TrackColor"));
+                });
+            this.WhenAnyValue(vm => vm.GroupVoicebanksBySinger)
+                .Subscribe(groupVoicebanks => {
+                    Preferences.Default.GroupVoicebanksBySinger = groupVoicebanks;
+                    Preferences.Save();
                 });
             this.WhenAnyValue(vm => vm.ShowPortrait)
                 .Subscribe(showPortrait => {
