@@ -118,23 +118,23 @@ namespace OpenUtau.Core {
         }
 
         public double GetBpmAtTick(int tick) {
-            var segment = tempoSegments.First(seg => seg.tickPos == tick || seg.tickEnd > tick); // TODO: optimize
+            var segment = TempoSegmentAtTick(tick);
             return segment.bpm;
         }
 
         public double TickPosToMsPos(double tick) {
-            var segment = tempoSegments.First(seg => seg.tickPos == tick || seg.tickEnd > tick); // TODO: optimize
+            var segment = TempoSegmentAtTick(tick);
             return segment.msPos + segment.msPerTick * (tick - segment.tickPos);
         }
 
         public double MsPosToNonExactTickPos(double ms) {
-            var segment = tempoSegments.First(seg => seg.msPos == ms || seg.msEnd > ms); // TODO: optimize
+            var segment = TempoSegmentAtMs(ms);
             double tickPos = segment.tickPos + (ms - segment.msPos) * segment.ticksPerMs;
             return tickPos;
         }
 
         public int MsPosToTickPos(double ms) {
-            var segment = tempoSegments.First(seg => seg.msPos == ms || seg.msEnd > ms); // TODO: optimize
+            var segment = TempoSegmentAtMs(ms);
             double tickPos = segment.tickPos + (ms - segment.msPos) * segment.ticksPerMs;
             return (int)Math.Round(tickPos);
         }
@@ -160,7 +160,7 @@ namespace OpenUtau.Core {
         }
 
         public void TickPosToBarBeat(int tick, out int bar, out int beat, out int remainingTicks) {
-            var segment = timeSigSegments.First(seg => seg.tickPos == tick || seg.tickEnd > tick); // TODO: optimize
+            var segment = TimeSigSegmentAtTick(tick);
             bar = segment.barPos + (tick - segment.tickPos) / segment.ticksPerBar;
             int tickInBar = tick - segment.tickPos - segment.ticksPerBar * (bar - segment.barPos);
             beat = tickInBar / segment.ticksPerBeat;
@@ -168,14 +168,14 @@ namespace OpenUtau.Core {
         }
 
         public int BarBeatToTickPos(int bar, int beat) {
-            var segment = timeSigSegments.First(seg => seg.barPos == bar || seg.barEnd > bar); // TODO: optimize
+            var segment = TimeSigSegmentAtBar(bar);
             return segment.tickPos + segment.ticksPerBar * (bar - segment.barPos) + segment.ticksPerBeat * beat;
         }
 
         public void NextBarBeat(int bar, int beat, out int nextBar, out int nextBeat) {
             nextBar = bar;
             nextBeat = beat + 1;
-            var segment = timeSigSegments.First(seg => seg.barPos == bar || seg.barEnd > bar); // TODO: optimize
+            var segment = TimeSigSegmentAtBar(bar);
             if (nextBeat >= segment.beatPerBar) {
                 nextBar++;
                 nextBeat = 0;
@@ -191,7 +191,7 @@ namespace OpenUtau.Core {
         }
 
         public UTimeSignature TimeSignatureAtTick(int tick) {
-            var segment = timeSigSegments.First(seg => seg.tickPos == tick || seg.tickEnd > tick); // TODO: optimize
+            var segment = TimeSigSegmentAtTick(tick);
             return new UTimeSignature {
                 barPosition = segment.barPos,
                 beatPerBar = segment.beatPerBar,
@@ -200,12 +200,68 @@ namespace OpenUtau.Core {
         }
 
         public UTimeSignature TimeSignatureAtBar(int bar) {
-            var segment = timeSigSegments.First(seg => seg.barPos == bar || seg.barEnd > bar); // TODO: optimize
+            var segment = TimeSigSegmentAtBar(bar);
             return new UTimeSignature {
                 barPosition = segment.barPos,
                 beatPerBar = segment.beatPerBar,
                 beatUnit = segment.beatUnit,
             };
+        }
+
+        TempoSegment TempoSegmentAtTick(double tick) {
+            var low = 0;
+            var high = tempoSegments.Count;
+            while (low < high) {
+                var mid = low + (high - low) / 2;
+                if (tempoSegments[mid].tickPos <= tick) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+            }
+            return tempoSegments[Math.Max(0, low - 1)];
+        }
+
+        TempoSegment TempoSegmentAtMs(double ms) {
+            var low = 0;
+            var high = tempoSegments.Count;
+            while (low < high) {
+                var mid = low + (high - low) / 2;
+                if (tempoSegments[mid].msPos <= ms) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+            }
+            return tempoSegments[Math.Max(0, low - 1)];
+        }
+
+        TimeSigSegment TimeSigSegmentAtTick(int tick) {
+            var low = 0;
+            var high = timeSigSegments.Count;
+            while (low < high) {
+                var mid = low + (high - low) / 2;
+                if (timeSigSegments[mid].tickPos <= tick) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+            }
+            return timeSigSegments[Math.Max(0, low - 1)];
+        }
+
+        TimeSigSegment TimeSigSegmentAtBar(int bar) {
+            var low = 0;
+            var high = timeSigSegments.Count;
+            while (low < high) {
+                var mid = low + (high - low) / 2;
+                if (timeSigSegments[mid].barPos <= bar) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+            }
+            return timeSigSegments[Math.Max(0, low - 1)];
         }
 
         public TimeAxis Clone() {

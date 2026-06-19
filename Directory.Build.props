@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <!-- Keep all generated build files out of the source tree. -->
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
+    <!-- Keep cached/offline builds deterministic. Enable explicitly with -p:NuGetAudit=true. -->
+    <NuGetAudit Condition="'$(NuGetAudit)' == ''">false</NuGetAudit>
+  </PropertyGroup>
+</Project>

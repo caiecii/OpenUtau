@@ -35,6 +35,12 @@ namespace OpenUtau.Core {
             Assert.Equal(7200, timeAxis.MsPosToTickPos(9000));
             Assert.Equal(15960, timeAxis.MsPosToTickPos(21833.33333333));
             Assert.Equal(24000, timeAxis.MsPosToTickPos(37166.66666667));
+
+            // Segment boundaries must select the new tempo, while positions before
+            // the first segment continue extrapolating from the initial tempo.
+            Assert.Equal(75, timeAxis.GetBpmAtTick(4800));
+            Assert.Equal(90, timeAxis.GetBpmAtTick(9600));
+            Assert.Equal(-1000, timeAxis.MsPosToTickPos(timeAxis.TickPosToMsPos(-1000)));
         }
 
         [Fact]
@@ -99,6 +105,10 @@ namespace OpenUtau.Core {
             Assert.Equal(13, bar);
             Assert.Equal(0, beat);
             Assert.Equal(440, remainingTicks);
+
+            Assert.Equal(3, timeAxis.TimeSignatureAtBar(5).beatPerBar);
+            Assert.Equal(4, timeAxis.TimeSignatureAtBar(11).beatPerBar);
+            Assert.Equal(11, timeAxis.TimeSignatureAtTick(13920).barPosition);
         }
     }
 }
