@@ -7,6 +7,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
+    <!-- Keep the complete runnable application, including its DLLs, in one subfolder. -->
+    <ArtifactsPivots>$(Configuration.ToLowerInvariant())\app</ArtifactsPivots>
     <SatelliteResourceLanguages>none</SatelliteResourceLanguages>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
